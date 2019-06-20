@@ -125,7 +125,7 @@
  *
  * :[2400, 9600, 19200, 38400, 57600, 115200, 250000, 500000, 1000000]
  */
-#define BAUDRATE 115200
+#define BAUDRATE 250000
 
 // Enable the Bluetooth serial interface on AT90USB devices
 //#define BLUETOOTH
@@ -453,9 +453,9 @@
   // If you are using a pre-configured hotend then you can use one of the value sets by uncommenting it
 
   // Ultimaker
-  #define DEFAULT_Kp 26.15
-  #define DEFAULT_Ki 2.74
-  #define DEFAULT_Kd 62.35
+  //#define DEFAULT_Kp 26.15
+  //#define DEFAULT_Ki 2.74
+  //#define DEFAULT_Kd 62.35
   // MakerGear
   //#define DEFAULT_Kp 7.0
   //#define DEFAULT_Ki 0.1
@@ -465,6 +465,12 @@
   //#define DEFAULT_Kp 63.0
   //#define DEFAULT_Ki 2.25
   //#define DEFAULT_Kd 440
+
+  // MPSMv2
+  
+  #define DEFAULT_Kp 11.51
+  #define DEFAULT_Ki 0.63
+  #define DEFAULT_Kd 52.87
 
 #endif // PIDTEMP
 
@@ -485,7 +491,7 @@
  * heater. If your configuration is significantly different than this and you don't understand
  * the issues involved, don't use bed PID until someone else verifies that your hardware works.
  */
-//#define PIDTEMPBED
+#define PIDTEMPBED
 
 //#define BED_LIMIT_SWITCHING
 
@@ -503,10 +509,9 @@
 
   //120V 250W silicone heater into 4mm borosilicate (MendelMax 1.5+)
   //from FOPDT model - kp=.39 Tp=405 Tdead=66, Tc set to 79.2, aggressive factor of .15 (vs .1, 1, 10)
-  #define DEFAULT_bedKp 231.09
-  #define DEFAULT_bedKi 45.21
-  #define DEFAULT_bedKd 295.34
-
+  #define DEFAULT_bedKp 73.71
+  #define DEFAULT_bedKi 13.77
+  #define DEFAULT_bedKd 98.67
   //120V 250W silicone heater into 4mm borosilicate (MendelMax 1.5+)
   //from pidautotune
   //#define DEFAULT_bedKp 97.1
@@ -694,7 +699,7 @@
  * Override with M92
  *                                      X, Y, Z, E0 [, E1[, E2[, E3[, E4[, E5]]]]]
  */
-#define DEFAULT_AXIS_STEPS_PER_UNIT    { 46.50, 46.50, 548.75, 48.50 }
+#define DEFAULT_AXIS_STEPS_PER_UNIT    { 93, 93, 1097.50, 97 }
 
 /**
  * Default Max Feed Rate (mm/s)
